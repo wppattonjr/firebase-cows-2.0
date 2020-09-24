@@ -10,7 +10,7 @@ const checkLoginStatus = () => {
     if (farmer) {
       const currentFarmer = userData.setCurrentFarmer(farmer);
       myNavbar.myNavbar(currentFarmer);
-      viewHelpers.viewListener();
+      viewHelpers.viewListener('cows-link');
     } else {
       auth.loginButton();
       $('#nav').html('');
