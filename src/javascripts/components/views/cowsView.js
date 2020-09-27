@@ -1,11 +1,11 @@
-import cowData from '../../helpers/data/cowData';
+import mergedData from '../../helpers/data/mergedData';
 import card from '../cards/cowCard';
 
 const cowsView = () => {
-  cowData.getAllCows().then((response) => {
+  mergedData.getDataForCowsView().then((response) => {
     if (response.length) {
-      response.forEach((cow) => {
-        $('#app').append(card.cowMaker(cow));
+      response.forEach((item) => {
+        $('#app').append(card.cowMaker(item));
       });
     } else {
       $('#app').append('<h2>NO COWS!</h2>');
