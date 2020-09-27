@@ -33,8 +33,7 @@ const checkIfFarmerExistsInFirebase = (farmer) => {
               `${baseUrl}/farmers/${response.data.name}.json`,
               update
             );
-          })
-          .catch((error) => console.warn(error));
+          }).catch((error) => console.warn(error));
       } else {
         console.warn('User Already Exists');
       }
@@ -67,8 +66,7 @@ const getSingleFarmer = (farmerUid) => new Promise((resolve, reject) => {
       const farmer = Object.values(response.data);
       const thisFarmer = farmer[0];
       resolve(thisFarmer);
-    })
-    .catch((error) => reject(error));
+    }).catch((error) => reject(error));
 });
 
 const deleteFarmer = (farmerUid) => {
@@ -87,4 +85,9 @@ const deleteFarmer = (farmerUid) => {
 };
 // NOTE FOR STUDENTS
 // If the user is logged in and this is set, we have already checked the API, so if they refresh, we know that they already exist.
-export default { setCurrentFarmer, getAllFarmers, deleteFarmer };
+export default {
+  setCurrentFarmer,
+  getAllFarmers,
+  deleteFarmer,
+  getSingleFarmer
+};
